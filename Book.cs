@@ -8,18 +8,37 @@ namespace library
 {
     using System;
 
-    
-    
-        public class Book
-        {
-            public int Index { get; set; }
-            public string Title { get; set; }
 
-            public Book(string title, int i)
-            {
-                Index = i;
-                Title = title;
-            }
+
+    public class Book
+    {
+        public string BookName { get; set; }
+        public string AuthorName { get; set; }
+        public string BookType { get; set; }
+        public string ISBN { get; set; }
+        public int BookQuantity { get; set; }
+        public Book(string n, string a, string t, string isbn, int q = 1)
+        {
+            BookName = n;
+            AuthorName = a;
+            BookType = t;
+            ISBN = isbn;
+            BookQuantity = q;
         }
+
+        public void Display()
+        {
+            Console.WriteLine($"Book name: {BookName}");
+            Console.WriteLine($"Book type: {BookType}");
+            Console.WriteLine($"Author name: {AuthorName}");
+            Console.WriteLine($"ISBN: {ISBN}");
+            Console.WriteLine($"Book Quantity: {BookQuantity}\n");
+        }
+        List<Book> books = new List<Book>();
+        public void AddBook(Book book)
+        {
+            books.Add(book);
+        }
+    }
     
 }
